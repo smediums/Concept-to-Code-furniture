@@ -1,0 +1,394 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@300;400;500;600;700&display=swap");
+header {
+  width: 100%;
+  height: 97px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5rem 1.7rem;
+  position: absolute;
+  z-index: 2;
+}
+
+header.showNav .hamMenu {
+  display: none;
+}
+
+header.showNav .close {
+  opacity: 1 !important;
+}
+
+header.showNav nav {
+  top: 0;
+}
+
+header .logo {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+header .toggler {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  padding: 0.5rem;
+  -webkit-transform: translateX(-10%);
+          transform: translateX(-10%);
+  z-index: 9;
+}
+
+header .toggler .close {
+  opacity: 0;
+}
+
+header nav {
+  width: 100vw;
+  height: 97px;
+  padding: 0 0.5rem;
+  position: absolute;
+  left: 0;
+  top: -100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  background: #a1a1a1;
+  -webkit-transition: 0.2s ease-in-out all;
+  transition: 0.2s ease-in-out all;
+}
+
+header nav ul {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header nav ul li {
+  list-style: none;
+  position: relative;
+  padding: 0.5rem;
+}
+
+header nav ul li::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: #454545;
+}
+
+header nav ul li:hover::after {
+  width: 15px;
+}
+
+header nav ul li a {
+  color: #454545;
+  font-weight: 600;
+}
+
+@media screen and (min-width: 940px) {
+  header .logo {
+    position: relative;
+    left: 5vw;
+    -webkit-transform: none;
+            transform: none;
+  }
+  header .toggler {
+    display: none;
+  }
+  header nav {
+    width: 45vw;
+    top: 0;
+    left: 15vw;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    background: none;
+  }
+  header nav ul li {
+    position: relative;
+  }
+  header nav ul li::after {
+    background: #eee;
+  }
+  header nav ul li a {
+    color: #eee;
+  }
+}
+
+.hero {
+  position: relative;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.hero .slider {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  width: 100vw;
+  -webkit-transition: 0.8s ease-in-out transform;
+  transition: 0.8s ease-in-out transform;
+}
+
+.hero .slider .slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100vw;
+}
+
+.hero .slider .slide .slideImg {
+  width: 100%;
+  height: 50vh;
+}
+
+.hero .slider .slide .slideText {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.hero .slider .slide .slideText h2 {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.hero .slider .slide .slideText .paragraph {
+  margin: 1rem 0 2rem;
+  line-height: 1.8;
+  color: #a1a1a1;
+}
+
+.hero .slider .slide .slideText .shopNow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  padding: 0.5rem 0;
+}
+
+.hero .slider .slide .slideText .shopNow:hover {
+  color: rgba(172, 172, 172, 0.55);
+}
+
+.hero .slider .slide .slideText .shopNow:hover svg {
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  -webkit-transform: translateX(25%);
+          transform: translateX(25%);
+}
+
+.hero .slider .slide .slideText .shopNow p {
+  letter-spacing: 12px;
+  color: #222;
+}
+
+.hero .slider .slide .slideText .shopNow p:hover {
+  color: #aaa;
+}
+
+.hero .slider .slide:nth-of-type(1) .slideImg {
+  background: url("../images/mobile-image-hero-1.jpg") no-repeat center/cover;
+}
+
+@media screen and (min-width: 580px) {
+  .hero .slider .slide:nth-of-type(1) .slideImg {
+    background: url("../images/desktop-image-hero-1.jpg") no-repeat center/cover;
+  }
+}
+
+.hero .slider .slide:nth-of-type(2) .slideImg {
+  background: url("../images/mobile-image-hero-2.jpg") no-repeat center/cover;
+}
+
+@media screen and (min-width: 580px) {
+  .hero .slider .slide:nth-of-type(2) .slideImg {
+    background: url("../images/desktop-image-hero-2.jpg") no-repeat center/cover;
+  }
+}
+
+.hero .slider .slide:nth-of-type(3) .slideImg {
+  background: url("../images/mobile-image-hero-3.jpg") no-repeat center/cover;
+}
+
+@media screen and (min-width: 580px) {
+  .hero .slider .slide:nth-of-type(3) .slideImg {
+    background: url("../images/desktop-image-hero-3.jpg") no-repeat center/cover;
+  }
+}
+
+.hero .btns {
+  position: absolute;
+  left: 100vw;
+  top: 50vh;
+  -webkit-transform: translate(-100%, -100%);
+          transform: translate(-100%, -100%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  border-radius: 5px 0 0 5px;
+}
+
+.hero .btns .nxt,
+.hero .btns .prv {
+  background: black;
+  padding: 1rem 1rem 0.8rem;
+  cursor: pointer;
+}
+
+.hero .btns .nxt:hover,
+.hero .btns .prv:hover {
+  background: #454545;
+}
+
+@media screen and (min-width: 940px) {
+  .hero .slider {
+    height: 70vh;
+  }
+  .hero .slider .slide {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    height: 100%;
+  }
+  .hero .slider .slide .slideImg {
+    width: 60vw;
+    height: 100%;
+  }
+  .hero .slider .slide .slideText {
+    width: 40vw;
+  }
+  .hero .btns {
+    top: 70.1vh;
+    left: 60vw;
+    -webkit-transform: translate(0, -100%);
+            transform: translate(0, -100%);
+  }
+}
+
+.about {
+  width: 100vw;
+  overflow: hidden;
+}
+
+.about img {
+  width: 100%;
+  height: 80%;
+}
+
+.about .aboutText {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 2.5rem 1rem;
+}
+
+.about .aboutText h3 {
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 8px;
+  margin-bottom: 1.4rem;
+}
+
+.about .aboutText p {
+  line-height: 1.8;
+  color: #a1a1a1;
+}
+
+@media screen and (min-width: 940px) {
+  .about {
+    width: 100vw;
+    height: 30vh;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .about img {
+    width: 25%;
+    height: 100%;
+  }
+  .about .aboutText {
+    height: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    line-height: initial;
+  }
+  .about .aboutText h3 {
+    margin-bottom: 0.5rem;
+  }
+  .about .aboutText p {
+    text-align: center;
+  }
+}
+
+html {
+  width: 100vw;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
+  text-decoration: none;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  overflow-y: hidden;
+}
+/*# sourceMappingURL=style.css.map */

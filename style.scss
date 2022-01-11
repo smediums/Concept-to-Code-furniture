@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@300;400;500;600;700&display=swap");
+@import "./src/variables";
+@import "./src/header";
+@import "./src/slider";
+@import "./src/about";
+
+
+html{
+  width: 100vw;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
+  text-decoration: none;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: $white;
+  overflow-y: hidden;
+}

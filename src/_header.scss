@@ -1,0 +1,120 @@
+header {
+  width: 100%;
+  height: 97px;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1.7rem;
+  position: absolute;
+  z-index: 2;
+
+  &.showNav {
+    .hamMenu {
+      display: none;
+    }
+    .close {
+      opacity: 1 !important;
+    }
+
+    nav {
+      top: 0;
+    }
+  }
+
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .toggler {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0.5rem;
+    transform: translateX(-10%);
+    z-index: 9;
+
+    .close {
+      opacity: 0;
+    }
+  }
+
+  nav {
+    width: 100vw;
+    height: 97px;
+    padding: 0 0.5rem;
+    position: absolute;
+    left: 0;
+    top: -100%;
+    display: flex;
+    justify-content: flex-end;
+    background: $darkGray;
+    transition: 0.2s ease-in-out all;
+
+    ul {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      li {
+        list-style: none;
+        position: relative;
+        padding: 0.5rem;
+
+        &::after {
+          content: "";
+          width: 0;
+          height: 2px;
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          transform: translateX(-50%);
+          background: $veryDarkGray;
+        }
+        &:hover {
+          &::after {
+            width: 15px;
+          }
+        }
+
+        a {
+          color: $veryDarkGray;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  @include responsive(lgScreens) {
+    .logo {
+      position: relative;
+      left: 5vw;
+      transform: none;
+    }
+
+    .toggler {
+      display: none;
+    }
+
+    nav {
+      width: 45vw;
+      top: 0;
+      left: 15vw;
+      justify-content: start;
+      background: none;
+
+      ul li {
+        position: relative;
+        &::after {
+          background: #eee;
+        }
+
+        a {
+          color: #eee;
+        }
+      }
+    }
+  }
+}

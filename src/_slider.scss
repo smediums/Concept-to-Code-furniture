@@ -1,0 +1,145 @@
+.hero {
+  position: relative;
+  width: 100vw;
+  overflow-x: hidden;
+
+  .slider {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100vw;
+    transition: 0.8s ease-in-out transform;
+
+    .slide {
+      display: flex;
+      flex-direction: column;
+      width: 100vw;
+
+      .slideImg {
+        width: 100%;
+        height: 50vh;
+      }
+
+      .slideText {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem 1rem;
+
+        h2 {
+          font-weight: 600;
+          font-size: 1.5rem;
+        }
+        .paragraph {
+          margin: 1rem 0 2rem;
+          line-height: 1.8;
+          color: $darkGray;
+        }
+
+        .shopNow {
+          display: flex;
+          cursor: pointer;
+          padding: 0.5rem 0;
+
+          &:hover {
+            color: rgba(172, 172, 172, 0.55);
+            svg {
+              transition: 0.2s ease-in-out;
+              transform: translateX(25%);
+            }
+          }
+
+          p {
+            // margin-right: 2rem;
+            letter-spacing: 12px;
+            color: #222;
+
+            &:hover {
+              color: #aaa;
+            }
+          }
+        }
+      }
+
+      &:nth-of-type(1) {
+        .slideImg {
+          background: url("../images/mobile-image-hero-1.jpg") no-repeat
+            center/cover;
+
+          @include responsive(tablet) {
+            background: url("../images/desktop-image-hero-1.jpg") no-repeat
+              center/cover;
+          }
+        }
+      }
+
+      &:nth-of-type(2) {
+        .slideImg {
+          background: url("../images/mobile-image-hero-2.jpg") no-repeat
+            center/cover;
+
+          @include responsive(tablet) {
+            background: url("../images/desktop-image-hero-2.jpg") no-repeat
+              center/cover;
+          }
+        }
+      }
+
+      &:nth-of-type(3) {
+        .slideImg {
+          background: url("../images/mobile-image-hero-3.jpg") no-repeat
+            center/cover;
+
+          @include responsive(tablet) {
+            background: url("../images/desktop-image-hero-3.jpg") no-repeat
+              center/cover;
+          }
+        }
+      }
+    }
+  }
+  .btns {
+    position: absolute;
+    left: 100vw;
+    top: 50vh;
+    transform: translate(-100%, -100%);
+    display: flex;
+    overflow:hidden;
+    border-radius: 5px 0 0 5px;
+
+    .nxt,
+    .prv {
+      background: $black;
+      padding: 1rem 1rem 0.8rem;
+      cursor: pointer;
+
+      &:hover {
+        background: $veryDarkGray;
+      }
+    }
+  }
+
+  @include responsive(lgScreens) {
+    .slider {
+      height: 70vh;
+      .slide {
+        flex-direction: row;
+        height: 100%;
+
+        .slideImg {
+          width: 60vw;
+          height: 100%;
+        }
+
+        .slideText {
+          width: 40vw;
+        }
+      }
+    }
+
+    .btns {
+      top: 70.1vh;
+      left: 60vw;
+      transform: translate(0, -100%);
+    }
+  }
+}
